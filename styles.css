@@ -1,0 +1,195 @@
+@font-face {
+    font-family: "Hanken-Grotesk";
+    src: url(/assets/fonts/HankenGrotesk-VariableFont_wght.ttf);
+}
+:root{
+    --Light-red: hsl(0, 100%, 67%);
+    --Orangey-yellow: hsl(39, 100%, 56%);
+    --Green-teal: hsl(166, 100%, 37%);
+    --Cobalt-blue: hsl(234, 85%, 45%);
+    --Light-red-a: hsl(0, 100%, 67%, 5%);
+    --Orangey-yellow-a: hsl(39, 100%, 56%, 5%);
+    --Green-teal-a: hsl(166, 100%, 37%, 5%);
+    --Cobalt-blue-a: hsl(234, 85%, 45%, 5% );
+    --White: hsl(0, 0%, 100%);
+    
+    --Pale-blue: hsl(221, 100%, 96%);
+    --Light-lavender: hsl(241, 100%, 89%);
+    --Dark-gray-blue: hsl(224, 30%, 27%);
+
+    /*Gradients*/
+    --Light-slate-blue-background: hsl(252, 100%, 67%);
+    --Light-royal-blue-background: hsl(241, 81%, 54%);
+    --Violet-blue-circle: hsla(256, 72%, 46%, 1);
+    --Persian-blue-circle: hsla(241, 72%, 46%, 0);
+
+    --Gray: #9099a1;
+
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: "Hanken-Grotesk", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+}
+p{
+    font-size: 18px;
+}
+.result{
+    box-shadow: .5rem 1rem 3rem hsl(224, 30%, 27%, .2);
+    border-radius: 1.5rem;
+    display: flex;
+    max-width: 736px;
+    
+}
+.result__main, .result__summary{
+    width: 50%;
+    height: 512px;
+    border-radius: inherit;
+}
+.main{
+    background-image: linear-gradient(var(--Light-slate-blue-background),var(--Light-royal-blue-background) );
+    color: var(--White);
+    display: grid;
+    place-items: center;
+    padding: 1rem;
+    
+}
+.main__title{
+    font-size: 18px;
+    color: var(--Light-lavender);
+}
+.main__score{
+    background-image: linear-gradient(var( --Violet-blue-circle),var(--Persian-blue-circle) );
+    width: 170px;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    color: var(--Light-lavender);
+}
+.main__score-obtained{
+    display: block;
+    font-size: 50px;
+    font-weight: 700;
+    color: var(--White);
+}
+.main__note{
+    padding: 0 3.5rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+.main__note-text{
+    font-size: 25px;
+}
+.main__note-description{
+    font-size: 15px;
+    color: var(--Light-lavender);
+    font-weight: 600;
+    
+}
+
+.summary{
+    display: grid;
+    place-items: start;
+    gap: 2rem;
+    padding: 3rem;
+}
+.summary__title{
+    font-size: 18px;
+    color: var(--Dark-gray-blue)
+}
+.summary__button{
+    border: none;
+    background-color: var(--Dark-gray-blue);
+    color: var(--White);
+    font-weight: 600;
+    width: 100%;
+    padding: 1rem 0;
+    border-radius: 999px;
+    cursor: pointer;
+
+}
+.summary__button:hover{
+    background-image: linear-gradient(var(--Light-slate-blue-background),var(--Light-royal-blue-background) );
+}
+.list{
+    width: 100%; 
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.item{
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 10px;
+}
+.item__name{
+    display: flex;
+    align-items: center;
+
+}
+.item--red{
+    background-color: var(--Light-red-a);
+    color: var(--Light-red);
+    font-weight: 600;
+}
+.item--orange{
+    background-color: var(--Orangey-yellow-a);
+    color: var(--Orangey-yellow);
+    font-weight: 600;
+}
+.item--green{
+    background-color: var(--Green-teal-a);
+    color: var(--Green-teal);
+    font-weight: 600;
+}
+.item--blue{
+    background-color: var(--Cobalt-blue-a);
+    color: var(--Cobalt-blue);
+    font-weight: 600;
+}
+.item__numbers{
+    color: var(--Gray);
+    font-weight: 600;
+}
+.item__numbers > span{
+    color: var(--Dark-gray-blue);
+}
+.item__dataname{
+    margin-left: 0.5rem;
+}
+
+@media screen and (max-width: 736px) {
+    .result{
+        flex-direction: column;
+
+    }
+    .result__main, .result__summary{
+        width: 100%;
+        max-width: 400px;
+    }
+    .main{
+        border-radius: 0 0 2rem 2rem;
+        height: 45vh;
+    }
+    .summary{
+        
+        height: 55vh;
+    }
+}
